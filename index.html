@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elara Med Spa</title>
+  <meta name="description" content="We specialize in advanced aesthetic treatments designed to renew, restore, and reveal your best skin." />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Flatpickr datepicker CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <style>
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .scroll-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scrollLeft 40s linear infinite;
+    }
+    .testimonial-card {
+      display: inline-block;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      width: 400px;
+      margin-right: 2rem;
+      vertical-align: top;
+      white-space: normal;
+    }
+    #testimonial-wrapper:hover .scroll-track {
+      animation-play-state: paused;
+    }
+    @media (max-width: 600px) {
+      .testimonial-card {
+        width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading-curtain">
+    <div class="logo-wrapper">
+      <div class="line"></div>
+      <div class="logo-text">RENEW</div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="/index.html" class="logo">Elara Med Spa</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#about">About</a>
+        <a href="#booking">Contact</a>
+      </nav>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+  </header>
+
+  <section
+    class="hero"
+    id="hero"
+    style="background-image: url('images/herocollage.png');"
+  >
+    <div class="fade-overlay"></div>
+    <div class="hero-content">
+      <div class="text-panel">
+        <h2>Advanced Aesthetics. Radiant Skin.</h2>
+        <p>
+          Personalized laser hair removal, tattoo removal, microneedling,
+          medical facials &amp; more.
+        </p>
+        <a href="#booking" class="btn">Book Your Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Specialized Treatments</h2>
+    <div class="service-cards">
+      <!-- Laser Hair Removal -->
+      <a
+        href="/laser-hair-removal.html"
+        class="service-card service-link"
+        style="background-image:url('images/3.png')"
+      >
+        <div class="service-overlay">
+          <h3>Laser Hair Removal</h3>
+          <p class="service-detail">
+            Safe, effective hair reduction for smooth, lasting results.
+          </p>
+        </div>
+      </a>
+
+      <!-- Laser Tattoo Removal -->
+      <a
+        href="/laser-tattoo-removal.html"
+        class="service-card service-link"
+        style="background-image:url('images/2.png')"
+      >
+        <div class="service-overlay">
+          <h3>Laser Tattoo Removal</h3>
+          <p class="service-detail">
+            Precision laser technology to safely erase unwanted ink.
+          </p>
+        </div>
+      </a>
+
+      <!-- Microneedling -->
+      <a
+        href="/microneedling.html"
+        class="service-card service-link"
+        style="background-image:url('images/9.png')"
+      >
+        <div class="service-overlay">
+          <h3>Microneedling</h3>
+          <p class="service-detail">
+            Stimulate collagen and revitalize skin texture and tone.
+          </p>
+        </div>
+      </a>
+
+      <!-- Medical Grade Facials -->
+      <a
+        href="/medical-facials.html"
+        class="service-card service-link"
+        style="background-image:url('images/8.png')"
+      >
+        <div class="service-overlay">
+          <h3>Medical Grade Facials</h3>
+          <p class="service-detail">
+            Deep-cleansing, customizable facials tailored to your skin’s needs.
+          </p>
+        </div>
+      </a>
+
+      <!-- Chemical Peels -->
+      <a
+        href="/chemical-peels.html"
+        class="service-card service-link"
+        style="background-image:url('images/4.png')"
+      >
+        <div class="service-overlay">
+          <h3>Chemical Peels</h3>
+          <p class="service-detail">
+            Exfoliate, renew, and reveal smoother, brighter skin.
+          </p>
+        </div>
+      </a>
+
+      <!-- Targeted Skin Therapies -->
+      <a
+        href="/skin-therapies.html"
+        class="service-card service-link"
+        style="background-image:url('images/7.png')"
+      >
+        <div class="service-overlay">
+          <h3>Targeted Skin Therapies</h3>
+          <p class="service-detail">
+            Treatments for pigmentation, acne, and anti-aging concerns.
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="testimonials" style="background-color: #99e9f4; padding: 4rem 0;">
+    <h2 class="section-title text-center mb-10">What Clients Say</h2>
+    <div
+      id="testimonial-wrapper"
+      style="overflow: hidden; position: relative; white-space: nowrap;"
+    >
+      <div id="testimonial-track" class="scroll-track">
+        <div class="testimonial-card">
+          “My hair removal sessions were comfortable and effective—my skin has never felt smoother.”
+        </div>
+        <div class="testimonial-card">“Always pleasurable”</div>
+        <div class="testimonial-card">
+          “The microneedling treatment erased years of acne scars. Truly life-changing!”
+        </div>
+        <div class="testimonial-card">
+          “Very professional, very nice and informative. 10/10 recommend!!!”
+        </div>
+        <div class="testimonial-card">
+          “Their medical facial left my skin glowing—I look ten years younger.”
+        </div>
+        <div class="testimonial-card">
+          “Tattoo removal was safe and gradual. My ink is almost completely gone.”
+        </div>
+        <div class="testimonial-card">
+          “The staff understood my skin concerns and crafted a personalized plan. I couldn’t be happier.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Renamed the next section from “services” to “book-services” -->
+  <section id="book-services">
+    <!-- Updated heading text here -->
+    <h2 class="section-title">Book With Us Now!</h2>
+
+    <!-- Note: class="service-cards scrollable" must match the CSS selector exactly -->
+    <div class="service-cards scrollable">
+      <!-- 1 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Chin + Jawline Laser Hair Removal</h3>
+          <p class="service-detail">$85</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Full Face + Neck Laser <br>Hair Removal</h3>
+          <p class="service-detail">$145</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Chin Laser Hair Removal</h3>
+          <p class="service-detail">$65</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Brazilian Laser Hair Removal</h3>
+          <p class="service-detail">$135</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Full Face Laser Hair Removal</h3>
+          <p class="service-detail">$110</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Chin &amp; Neck Laser Hair Removal</h3>
+          <p class="service-detail">$120</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Underarm Laser Hair Removal</h3>
+          <p class="service-detail">$75</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Chest Laser Hair Removal</h3>
+          <p class="service-detail">$110</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Full Back Laser Hair Removal</h3>
+          <p class="service-detail">$185</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Lip Laser Hair Removal</h3>
+          <p class="service-detail">$20</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 11 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Lip &amp; Chin Laser Hair Removal</h3>
+          <p class="service-detail">$90</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 12 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Neck Laser Hair Removal</h3>
+          <p class="service-detail">$70</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 13 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Half Arm Laser Hair Removal</h3>
+          <p class="service-detail">$70</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 14 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Full Arm Laser Hair Removal</h3>
+          <p class="service-detail">$105</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 15 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Half Back Laser Hair Removal</h3>
+          <p class="service-detail">$90</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 16 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Half Leg Laser Hair Removal</h3>
+          <p class="service-detail">$95</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 17 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Full Leg Laser Hair Removal</h3>
+          <p class="service-detail">$170</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 18 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Buttock Laser Hair Removal</h3>
+          <p class="service-detail">$95</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 19 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>FOLLOW UP Chin + Neck Laser Hair Removal</h3>
+          <p class="service-detail">Free</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 20 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Cleavage Laser Hair Removal</h3>
+          <p class="service-detail">$65</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ────────────────────────────────────────────────────────────────── -->
+      <!-- FACIAL SERVICES (21–34)                                            -->
+      <!-- ────────────────────────────────────────────────────────────────── -->
+      <!-- 21 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Teen Facial</h3>
+          <p class="service-detail">$70</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 22 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Glow Facial</h3>
+          <p class="service-detail">$135</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 23 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>DermaPlanning Facial</h3>
+          <p class="service-detail">$125</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 24 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Elara Signature Facial</h3>
+          <p class="service-detail">$180</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 25 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Gentleman’s Facial</h3>
+          <p class="service-detail">$120</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 26 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Back Facial “Bacial”</h3>
+          <p class="service-detail">$110</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 27 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Private Facial “Privacial”</h3>
+          <p class="service-detail">$90</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 28 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Peach Facial “Booty Glow”</h3>
+          <p class="service-detail">$110</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 29 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Acne Facial</h3>
+          <p class="service-detail">$120</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 30 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Express Facial</h3>
+          <p class="service-detail">$65</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 31 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Classic Facial</h3>
+          <p class="service-detail">$100</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 32 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Deep Cleansing Facial</h3>
+          <p class="service-detail">$175</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 33 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Dermaplanning + MicroNeedling Facial</h3>
+          <p class="service-detail">$135</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 34 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Anti Aging Facial</h3>
+          <p class="service-detail">$145</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ────────────────────────────────────────────────────────────────── -->
+      <!-- 4‐SESSION LASER BUNDLES (35–36)                                    -->
+      <!-- ────────────────────────────────────────────────────────────────── -->
+      <!-- 35 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Small Tattoo Removal – 4 Session Bundle</h3>
+          <p class="service-detail">$630</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 36 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>SPECIAL 4 Session Chin + Neck Laser Hair Removal</h3>
+          <p class="service-detail">$440</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ────────────────────────────────────────────────────────────────── -->
+      <!-- LASER TATTOO REMOVAL (37–41)                                       -->
+      <!-- ────────────────────────────────────────────────────────────────── -->
+      <!-- 37 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Small Tattoo Removal</h3>
+          <p class="service-detail">$185</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 38 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Medium Tattoo Removal</h3>
+          <p class="service-detail">$215</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 39 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Large Tattoo Removal</h3>
+          <p class="service-detail">$340</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 40 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>Small Tattoo Removal – 6 Session Bundle</h3>
+          <p class="service-detail">$950</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+      <!-- 41 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>FOLLOW UP Small Tattoo Removal</h3>
+          <p class="service-detail">Free</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ────────────────────────────────────────────────────────────────── -->
+      <!-- OTHER (42)                                                      -->
+      <!-- ────────────────────────────────────────────────────────────────── -->
+      <!-- 42 -->
+      <div class="pricing-card">
+        <div class="service-overlay">
+          <h3>CONSULTATION</h3>
+          <p class="service-detail">$45</p>
+          <a href="#booking" class="btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="floral-overlay"></div>
+      <h2 class="section-title typewriter-text" id="typewriter-text"></h2>
+      <div class="divider"></div>
+      <div class="fade-paragraphs" id="about-paragraphs">
+        <p>
+          At Elara Med Spa & Laser Center, we specialize in advanced aesthetic treatments designed to renew, restore, and reveal your best skin. Our services include laser hair removal, laser tattoo removal, microneedling, medical grade facials, chemical peels, and targeted skin therapies for pigmentation, acne, and anti-aging. Each treatment is personalized to your skin’s unique needs using top-tier technology and techniques.
+        </p>
+      </div>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <h3>Expertise</h3>
+        <p class="card-front">Decades of clinical experience.</p>
+        <p class="card-back">Our providers are highly trained in the latest aesthetic technologies and medical protocols.</p>
+      </div>
+      <div class="about-card">
+        <h3>Precision</h3>
+        <p class="card-front">Targeted results, minimal downtime.</p>
+        <p class="card-back">We tailor every session to your unique skin type and goals for optimal efficacy.</p>
+      </div>
+      <div class="about-card">
+        <h3>Innovation</h3>
+        <p class="card-front">Cutting-edge technology.</p>
+        <p class="card-back">From advanced lasers to medical-grade peels, we invest in the best equipment to deliver superior outcomes.</p>
+      </div>
+      <div class="about-card">
+        <h3>Holistic Care</h3>
+        <p class="card-front">Skin-first approach.</p>
+        <p class="card-back">We focus on long-term health and vitality, not just quick fixes.</p>
+      </div>`
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2 class="section-title">Book Your Appointment</h2>
+    <form name="booking" method="POST" data-netlify="true" class="booking-form">
+      <input type="hidden" name="form-name" value="booking" />
+      <label>Your Name<input type="text" name="name" /></label>
+      <label>Your Email<input type="email" name="email" /></label>
+      <label>Choose Date<input
+          type="text"
+          id="date-input"
+          name="date"
+          placeholder="Select a date"
+          readonly
+        /></label>
+      <label>Choose Time<input type="time" name="time" /></label>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Elara Med Spa & Laser Center. All rights reserved.</p>
+    <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;">
+      Site created as a preview by 
+      <a
+        href="https://www.pinnacle-sites.com"
+        target="_blank"
+        style="color: inherit; text-decoration: underline;"
+      >
+        Pinnacle Sites
+      </a
+      >. Elara Med Spa & Laser Center is a prospective brand for demonstration purposes.
+    </p>
+  </footer>
+
+  <script>
+    // Mobile nav logic
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Date picker
+    flatpickr("#date-input", {
+      altInput: true,
+      altFormat: "F j, Y",
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      disableMobile: "true"
+    });
+
+    // Testimonials scroll logic
+    const track = document.getElementById('testimonial-track');
+    let isPaused = false;
+    document.getElementById('testimonial-wrapper').addEventListener('wheel', () => {
+      track.style.animationPlayState = 'paused';
+      clearTimeout(isPaused);
+      isPaused = setTimeout(() => {
+        track.style.animationPlayState = 'running';
+      }, 2000);
+    });
+    document.getElementById('testimonial-wrapper').addEventListener('mouseenter', () => {
+      track.style.animationPlayState = 'paused';
+    });
+    document.getElementById('testimonial-wrapper').addEventListener('mouseleave', () => {
+      track.style.animationPlayState = 'running';
+    });
+
+    // Typewriter Effect (no repeat) + Reveal paragraphs
+    const typewriter = document.getElementById('typewriter-text');
+    const paragraphs = document.getElementById('about-paragraphs');
+    const text = "Renew. Restore. Reveal.";
+    let index = 0;
+    function typeOnce() {
+      if (index <= text.length) {
+        typewriter.innerHTML = text.substring(0, index++);
+        setTimeout(typeOnce, 100);
+      } else {
+        paragraphs.style.opacity = 1;
+      }
+    }
+    typeOnce();
+
+    // Loading-curtain fade
+    window.addEventListener("load", function () {
+      const curtain = document.getElementById("loading-curtain");
+      setTimeout(() => {
+        curtain.style.opacity = "0";
+        setTimeout(() => {
+          curtain.style.display = "none";
+        }, 600);
+      }, 1200);
+    });
+  </script>
+  <script>
+  // As soon as the page loads, check if we're on a narrow screen
+  function enableBookingHorizontalScroll() {
+    if (window.innerWidth <= 768) {
+      const container = document.querySelector(
+        "#book-services .service-cards.scrollable"
+      );
+      if (!container) return;
+
+      // Force single-row flex + horizontal overflow
+      container.style.display = "flex";
+      container.style.flexWrap = "nowrap";
+      container.style.overflowX = "auto";
+      container.style.webkitOverflowScrolling = "touch";
+      container.style.paddingLeft = "5%";
+      container.style.paddingRight = "5%";
+
+      // Make sure each card stays 80% of viewport width with a right gap
+      const cards = container.querySelectorAll(".pricing-card");
+      cards.forEach((card, idx) => {
+        card.style.flex = "0 0 80%";
+        card.style.maxWidth = "80%";
+        // give every card except the last a right margin
+        if (idx < cards.length - 1) {
+          card.style.marginRight = "16px";
+        } else {
+          card.style.marginRight = "0";
+        }
+      });
+    }
+  }
+
+  window.addEventListener("load", enableBookingHorizontalScroll);
+  window.addEventListener("resize", enableBookingHorizontalScroll);
+</script>
+
+</body>
+</html>
